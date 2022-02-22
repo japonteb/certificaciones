@@ -1,0 +1,1 @@
+insert into certificacion (nombre, detalle,duracion,precio) values (:nombre, :detalle, :duracion, :precio)

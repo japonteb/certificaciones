@@ -1,0 +1,1 @@
+select count(1) from certificacion where nombre = :nombre and detalle = :detalle
