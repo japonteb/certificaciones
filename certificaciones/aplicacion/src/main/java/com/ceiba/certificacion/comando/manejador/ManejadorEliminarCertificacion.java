@@ -1,20 +1,20 @@
 package com.ceiba.certificacion.comando.manejador;
 
-import com.ceiba.manejador.ManejadorComando;
-import com.ceiba.usuario.servicio.ServicioEliminarUsuario;
 import org.springframework.stereotype.Component;
 
+import com.ceiba.certificacion.servicio.ServicioEliminarCertificacion;
+import com.ceiba.manejador.ManejadorComando;
 
 @Component
 public class ManejadorEliminarCertificacion implements ManejadorComando<Long> {
 
-    private final ServicioEliminarUsuario servicioEliminarUsuario;
+	private final ServicioEliminarCertificacion servicioEliminarCertificacion;
 
-    public ManejadorEliminarCertificacion(ServicioEliminarUsuario servicioEliminarUsuario) {
-        this.servicioEliminarUsuario = servicioEliminarUsuario;
-    }
+	public ManejadorEliminarCertificacion(ServicioEliminarCertificacion servicioEliminarCertificacion) {
+		this.servicioEliminarCertificacion = servicioEliminarCertificacion;
+	}
 
-    public void ejecutar(Long idUsuario) {
-        this.servicioEliminarUsuario.ejecutar(idUsuario);
-    }
+	public void ejecutar(Long idCertificacion) {
+		this.servicioEliminarCertificacion.ejecutar(idCertificacion);
+	}
 }
