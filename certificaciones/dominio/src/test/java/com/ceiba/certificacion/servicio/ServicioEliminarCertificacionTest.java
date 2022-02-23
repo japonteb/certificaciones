@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-public class ServicioEliminarCertificacionTest {
+class ServicioEliminarCertificacionTest {
 
     @Test
     @DisplayName("Deberia eliminar la certificacion llamando al repositorio")

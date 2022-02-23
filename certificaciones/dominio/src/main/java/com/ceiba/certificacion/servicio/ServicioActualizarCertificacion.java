@@ -3,8 +3,6 @@ package com.ceiba.certificacion.servicio;
 import com.ceiba.certificacion.modelo.entidad.Certificacion;
 import com.ceiba.certificacion.puerto.repositorio.RepositorioCertificacion;
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.usuario.modelo.entidad.Usuario;
-import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
 
 public class ServicioActualizarCertificacion {
 

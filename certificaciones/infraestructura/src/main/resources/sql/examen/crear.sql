@@ -1,0 +1,1 @@
+insert into examen (cliente_id, certificacion_id,fecha_presentacion,precio_total) values (:clienteId, :certificacionId, :fechaPresentacion, :precioTotal)

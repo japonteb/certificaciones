@@ -1,18 +1,18 @@
 package com.ceiba.certificacion.servicio;
 
-import com.ceiba.BasePrueba;
-import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
-import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
-import com.ceiba.certificacion.modelo.entidad.Certificacion;
-import com.ceiba.certificacion.puerto.repositorio.RepositorioCertificacion;
-import com.ceiba.certificacion.servicio.testdatabuilder.CertificacionTestDataBuilder;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import com.ceiba.BasePrueba;
+import com.ceiba.certificacion.modelo.entidad.Certificacion;
+import com.ceiba.certificacion.puerto.repositorio.RepositorioCertificacion;
+import com.ceiba.certificacion.servicio.testdatabuilder.CertificacionTestDataBuilder;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 
-public class ServicioCrearCertificacionTest {
+class ServicioCrearCertificacionTest {
 
     @Test
     @DisplayName("Deberia lanzar una exepcion cuando se valide la existencia de la certificación")

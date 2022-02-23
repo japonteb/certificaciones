@@ -11,6 +11,7 @@ public class CertificacionTestDataBuilder {
 	private Double precioCertificacion;
 
 	public CertificacionTestDataBuilder() {
+		id=1L;
 		nombreCertificacion = "Java";
 		detalleCertificacion = "Java EE y Servicios Web";
 		duracionCertificacion = 120;

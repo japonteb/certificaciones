@@ -9,9 +9,10 @@ import com.ceiba.BasePrueba;
 import com.ceiba.certificacion.modelo.entidad.Certificacion;
 import com.ceiba.certificacion.servicio.testdatabuilder.CertificacionTestDataBuilder;
 import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 
-public class CertificacionTest {
+class CertificacionTest {
 
 	@Test
 	@DisplayName("Deberia crear correctamente la certificacion")
@@ -22,8 +23,8 @@ public class CertificacionTest {
 		assertEquals(1, certificacion.getId());
 		assertEquals("Java", certificacion.getNombre());
 		assertEquals("Java EE y Servicios Web", certificacion.getDetalle());
-		assertEquals("120", certificacion.getDuracion());
-		assertEquals("1000000", certificacion.getPrecio());
+		assertEquals(Integer.valueOf(120), certificacion.getDuracion());
+		assertEquals(Double.valueOf(1000000), certificacion.getPrecio());
 	}
 
 	@Test
@@ -83,7 +84,7 @@ public class CertificacionTest {
 		// act-assert
 		BasePrueba.assertThrows(() -> {
 			certificacionTestDataBuilder.build();
-		}, ExcepcionLongitudValor.class, "El precio de la certificación debe ser mayor a cero");
+		}, ExcepcionValorInvalido.class, "El precio de la certificación debe ser mayor a cero");
 	}
 
 	@Test
@@ -95,7 +96,7 @@ public class CertificacionTest {
 		// act-assert
 		BasePrueba.assertThrows(() -> {
 			certificacionTestDataBuilder.build();
-		}, ExcepcionLongitudValor.class, "El precio de la certificación debe ser mayor a cero");
+		}, ExcepcionValorInvalido.class, "El precio de la certificación debe ser mayor a cero");
 	}
 
 }
