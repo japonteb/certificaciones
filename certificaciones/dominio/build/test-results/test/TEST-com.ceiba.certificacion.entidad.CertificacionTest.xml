@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.certificacion.entidad.CertificacionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-02-24T01:11:04" hostname="JAVIER-APONTE" time="0.035">
+<testsuite name="com.ceiba.certificacion.entidad.CertificacionTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-02-24T18:20:57" hostname="JAVIER-APONTE" time="0.033">
   <properties/>
-  <testcase name="deberiaFallarSinPrecio()" classname="com.ceiba.certificacion.entidad.CertificacionTest" time="0.026"/>
-  <testcase name="deberiaFallarSinNombreDeCertificacion()" classname="com.ceiba.certificacion.entidad.CertificacionTest" time="0.001"/>
+  <testcase name="deberiaFallarSinPrecio()" classname="com.ceiba.certificacion.entidad.CertificacionTest" time="0.024"/>
+  <testcase name="deberiaFallarSinNombreDeCertificacion()" classname="com.ceiba.certificacion.entidad.CertificacionTest" time="0.0"/>
   <testcase name="deberiaFallarConPrecioCero()" classname="com.ceiba.certificacion.entidad.CertificacionTest" time="0.0"/>
   <testcase name="deberiaFallarSinDetalle()" classname="com.ceiba.certificacion.entidad.CertificacionTest" time="0.0"/>
   <testcase name="deberiaFallarConPrecioNegativo()" classname="com.ceiba.certificacion.entidad.CertificacionTest" time="0.0"/>

@@ -40,7 +40,7 @@ class ComandoControladorExamenTest {
         mocMvc.perform(post("/examenes")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(examen)))
-        		.andExpect(status().is5xxServerError());
+        		.andExpect(status().is4xxClientError());
     }
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.utilidad.UtilidadesFechaTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-02-24T01:11:05" hostname="JAVIER-APONTE" time="0.003">
+<testsuite name="com.ceiba.utilidad.UtilidadesFechaTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-02-24T18:20:58" hostname="JAVIER-APONTE" time="0.004">
   <properties/>
   <testcase name="Deberia devolver que no es festivo" classname="com.ceiba.utilidad.UtilidadesFechaTest" time="0.001"/>
   <testcase name="Deberia devolver que sí es fin de semana para un sábado" classname="com.ceiba.utilidad.UtilidadesFechaTest" time="0.0"/>

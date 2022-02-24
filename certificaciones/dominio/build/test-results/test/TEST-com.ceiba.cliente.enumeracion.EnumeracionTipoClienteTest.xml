@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.cliente.enumeracion.EnumeracionTipoClienteTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-02-24T01:11:05" hostname="JAVIER-APONTE" time="0.002">
+<testsuite name="com.ceiba.cliente.enumeracion.EnumeracionTipoClienteTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-02-24T18:20:58" hostname="JAVIER-APONTE" time="0.003">
   <properties/>
-  <testcase name="deberiaFallarConCodigoTipoClienteInvalido()" classname="com.ceiba.cliente.enumeracion.EnumeracionTipoClienteTest" time="0.001"/>
-  <testcase name="Deberia retornar el valor correcto de la enumeración por código" classname="com.ceiba.cliente.enumeracion.EnumeracionTipoClienteTest" time="0.001"/>
+  <testcase name="deberiaFallarConCodigoTipoClienteInvalido()" classname="com.ceiba.cliente.enumeracion.EnumeracionTipoClienteTest" time="0.002"/>
+  <testcase name="Deberia retornar el valor correcto de la enumeración por código" classname="com.ceiba.cliente.enumeracion.EnumeracionTipoClienteTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
