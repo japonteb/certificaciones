@@ -39,7 +39,7 @@ pipeline {
       steps{
         echo "------------>Compile & Unit Tests<------------"
           sh 'chmod +x gradlew'
-          sh './gradlew --b ./certificaciones/build.gradle test'
+          sh './gradlew --b ./certificaciones/build.gradle clean test'
       }
     }
 
