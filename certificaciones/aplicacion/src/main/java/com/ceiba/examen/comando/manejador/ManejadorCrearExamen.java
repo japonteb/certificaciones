@@ -24,13 +24,10 @@ public class ManejadorCrearExamen implements ManejadorComandoRespuesta<ComandoEx
 	}
 
 	public ComandoRespuesta<Long> ejecutar(ComandoExamen comandoExamen) {
-		//TODO:: coregir el problema con el cliente y la certificacion
+		
     	Cliente cliente = new Cliente(1L, "1234", EnumeracionTipoCliente.CLIENTE_TIPO_1);
     	Certificacion certificacion = new Certificacion(1L, "test nombre", "test detalle", 120, Double.valueOf(100));
-    	/*
-		Cliente cliente = comandoExamen.getClienteId();
-		Certificacion certificacion = comandoExamen.getCertificacionId();
-		*/
+    	
 		Examen examen = this.fabricaExamen.crear(comandoExamen, cliente, certificacion);
 		return new ComandoRespuesta<>(this.servicioCrearExamen.ejecutar(examen));
 	}
