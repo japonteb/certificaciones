@@ -1,4 +1,3 @@
-@Library('ceiba-jenkins-library') _
 pipeline {
   //Donde se va a ejecutar el Pipeline
   agent {
@@ -8,7 +7,7 @@ pipeline {
   //Opciones específicas de Pipeline dentro del Pipeline
   options {
         buildDiscarder(logRotator(numToKeepStr: '3'))
-        disableConcurrentBuilds()
+     disableConcurrentBuilds()
   }
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
@@ -31,17 +30,13 @@ pipeline {
     stage('Checkout') {
       steps{
         echo "------------>Checkout<------------"
-        checkout scm
       }
     }
     
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-        sh 'chmod +x gradlew'
-        sh './gradlew clean'
-        echo "------------>Ejecuto el clean<------------"
-        sh './gradlew --b ./build.gradle test'
+
       }
     }
 
@@ -49,19 +44,14 @@ pipeline {
       steps{
         echo '------------>Análisis de código estático<------------'
         withSonarQubeEnv('Sonar') {
-            sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
         }
-
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:certificaciones-javier.aponte', 
-                sonarName:'CeibaADN-Ceiba-Certificaciones(javier.aponte)', 
-                sonarPathProperties:'./sonar-project.properties')
       }
     }
 
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-        sh './gradlew --b ./build.gradle build -x test'
       }
     }  
   }
@@ -72,13 +62,10 @@ pipeline {
     }
     success {
       echo 'This will run only if successful'
-      junit 'build/test-results/test/*.xml'
     }
     failure {
-    echo 'This will run only if failed'
-    mail (to: 'javier.aponte@ceiba.com.co',subject: "Failed Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}")
-}
-
+      echo 'This will run only if failed'
+    }
     unstable {
       echo 'This will run only if the run was marked as unstable'
     }
