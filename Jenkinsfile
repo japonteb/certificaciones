@@ -37,6 +37,7 @@ pipeline{
                 stage('Test- Backend'){
                     steps {
                         echo '------------>Test Backend<------------'
+                        sh 'cd certificaciones'
                         sh 'chmod +x ./gradlew'
                         sh './gradlew clean'
                         sh './gradlew --b ./build.gradle test'
