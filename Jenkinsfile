@@ -1,4 +1,5 @@
 @Library('ceiba-jenkins-library') _
+
 pipeline {
   //Donde se va a ejecutar el Pipeline
   agent {
@@ -38,14 +39,15 @@ pipeline {
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-          sh 'chmod +x gradlew'
-          sh './gradlew --b ./certificaciones/build.gradle clean test'
+          sh 'chmod +x ./certificaciones/gradlew'
+          sh './certificaciones/gradlew --b ./certificaciones/build.gradle clean'
+          sh './certificaciones/gradlew --b ./certificaciones/build.gradle test'
       }
     }
 
     stage('Static Code Analysis') {
       steps{
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:certificaciones-javier.aponte',
+        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:javier.certificaciones-javier.aponte',
         sonarName:'CeibaADN-Ceiba-Certificaciones(javier.aponte)',
         sonarPathProperties:'./sonar-project.properties')
     }
@@ -54,7 +56,9 @@ pipeline {
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-        sh './gradlew --b ./certificaciones/build.gradle build -x test'
+        sh 'chmod +x ./certificaciones/gradlew'
+        sh './certificaciones/gradlew --b ./certificaciones/build.gradle clean'
+        sh './certificaciones/gradlew --b ./certificaciones/build.gradle build -x test'
       }
     }  
   }
@@ -65,7 +69,6 @@ pipeline {
     }
     success {
       echo 'This will run only if successful'
-      junit 'build/test-results/test/*.xml' //RUTA RELATIVA DE LOS ARCHIVOS .XML
     }
     failure {
       echo 'This will run only if failed'
