@@ -38,8 +38,8 @@ pipeline{
                     steps {
                         echo '------------>Test Backend<------------'
                         sh 'chmod +x ./gradlew'
-                        sh './gradlew clean'
-                        sh './gradlew --b ./build.gradle test'
+                        sh './certificaciones/gradlew clean'
+                        sh './certificaciones/gradlew --b ./certificaciones/build.gradle test'
                     }
                     post{
                         always {
@@ -82,7 +82,7 @@ pipeline{
                     steps{
                         echo "------------>Compilación backend<------------"
                         //Construir sin tarea test que se ejecutó previamente
-                        sh './gradlew --b ./build.gradle build -x test'
+                        sh './certificaciones/gradlew --b ./build.gradle build -x test'
                     }
                 }
             }
