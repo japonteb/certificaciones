@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.examen.servicio.ServicioCrearExamenTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-02-24T01:11:05" hostname="JAVIER-APONTE" time="0.031">
+  <properties/>
+  <testcase name="Deberia lanzar una exepcion cuando se valide la existencia del examen" classname="com.ceiba.examen.servicio.ServicioCrearExamenTest" time="0.028"/>
+  <testcase name="Deberia Crear el examen de manera correcta" classname="com.ceiba.examen.servicio.ServicioCrearExamenTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

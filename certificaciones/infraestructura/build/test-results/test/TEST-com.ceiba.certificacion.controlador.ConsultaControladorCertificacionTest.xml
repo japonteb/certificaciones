@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.certificacion.controlador.ConsultaControladorCertificacionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-24T01:23:15" hostname="JAVIER-APONTE" time="0.22">
+  <properties/>
+  <testcase name="Deberia listar certificaciones" classname="com.ceiba.certificacion.controlador.ConsultaControladorCertificacionTest" time="0.22"/>
+  <system-out><![CDATA[2022-02-23 20:23:14.601  INFO 13604 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.certificacion.controlador.ConsultaControladorCertificacionTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2022-02-23 20:23:14.603  INFO 13604 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2022-02-23 20:23:14.604  INFO 13604 --- [    Test worker] .b.t.a.w.s.WebMvcTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2305d2e4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@50a52c39, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@4021df2f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4d4c416, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@9cbb49a, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7076957e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3ee0e4f8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1c366346, org.springframework.test.context.event.EventPublishingTestExecutionListener@480d6b3e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@c14da24, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@35ea287a, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1a6941d2, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@391e8d3a, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@13f1b5c7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@77bce63b]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.5.3)
+
+2022-02-23 20:23:14.635  INFO 13604 --- [    Test worker] c.c.ConsultaControladorCertificacionTest : Starting ConsultaControladorCertificacionTest using Java 1.8.0_202 on JAVIER-APONTE with PID 13604 (started by javier.aponte in C:\Users\javier.aponte\Documents\Desarrollo\ADN3\certificaciones\java-arquitectura-hexagonal\certificaciones\infraestructura)
+2022-02-23 20:23:14.636  INFO 13604 --- [    Test worker] c.c.ConsultaControladorCertificacionTest : No active profile set, falling back to default profiles: default
+2022-02-23 20:23:14.873  INFO 13604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Starting...
+2022-02-23 20:23:14.876  INFO 13604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Start completed.
+2022-02-23 20:23:15.217  INFO 13604 --- [    Test worker] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2022-02-23 20:23:15.219  INFO 13604 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Starting embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false', username='sa'
+2022-02-23 20:23:15.223  INFO 13604 --- [    Test worker] o.f.c.internal.database.DatabaseFactory  : Database: jdbc:h2:mem:testdb (H2 1.4)
+2022-02-23 20:23:15.224  WARN 13604 --- [    Test worker] o.f.c.internal.database.base.Database    : Flyway upgrade recommended: H2 1.4.200 is newer than this version of Flyway and support has not been tested.
+2022-02-23 20:23:15.231  INFO 13604 --- [    Test worker] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.002s)
+2022-02-23 20:23:15.234  INFO 13604 --- [    Test worker] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table: "PUBLIC"."flyway_schema_history"
+2022-02-23 20:23:15.240  INFO 13604 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2022-02-23 20:23:15.241  INFO 13604 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.0 - schema
+2022-02-23 20:23:15.249  INFO 13604 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version 1.1 - data
+2022-02-23 20:23:15.254  INFO 13604 --- [    Test worker] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC" (execution time 00:00.021s)
+2022-02-23 20:23:15.413  INFO 13604 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-02-23 20:23:15.413  INFO 13604 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-02-23 20:23:15.414  INFO 13604 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2022-02-23 20:23:15.423  INFO 13604 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2022-02-23 20:23:15.425  INFO 13604 --- [    Test worker] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2022-02-23 20:23:15.430  INFO 13604 --- [    Test worker] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2022-02-23 20:23:15.440  INFO 13604 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_1
+2022-02-23 20:23:15.443  INFO 13604 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: actualizarUsingPUT_1
+2022-02-23 20:23:15.444  INFO 13604 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: crearUsingPOST_2
+2022-02-23 20:23:15.445  INFO 13604 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: eliminarUsingDELETE_1
+2022-02-23 20:23:15.451  INFO 13604 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_1
+2022-02-23 20:23:15.455  INFO 13604 --- [    Test worker] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: listarUsingGET_2
+2022-02-23 20:23:15.458  INFO 13604 --- [    Test worker] c.c.ConsultaControladorCertificacionTest : Started ConsultaControladorCertificacionTest in 0.851 seconds (JVM running for 10.676)
+2022-02-23 20:23:15.470  INFO 13604 --- [    Test worker] o.s.j.d.e.EmbeddedDatabaseFactory        : Shutting down embedded database: url='jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=false'
+2022-02-23 20:23:15.677  INFO 13604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown initiated...
+2022-02-23 20:23:15.679  INFO 13604 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : pool - Shutdown completed.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

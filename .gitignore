@@ -1,5 +1,21 @@
 .gradle
-build
+certificaciones/dominio/build/classes/
+certificaciones/dominio/build/generated/
+certificaciones/dominio/build/jacoco/
+certificaciones/dominio/build/libs/
+certificaciones/dominio/build/reports/
+certificaciones/dominio/build/resources/
+certificaciones/dominio/build/tmp/
+certificaciones/aplicacion/build/
+certificaciones/build/
+certificaciones/infraestructura/build/classes/
+certificaciones/infraestructura/build/generated/
+certificaciones/infraestructura/build/jacoco/
+certificaciones/infraestructura/build/libs/
+certificaciones/infraestructura/build/reports/
+certificaciones/infraestructura/build/resources/
+certificaciones/infraestructura/build/tmp/
+
 !gradle/wrapper/gradle-wrapper.jar
 
 ### STS ###
