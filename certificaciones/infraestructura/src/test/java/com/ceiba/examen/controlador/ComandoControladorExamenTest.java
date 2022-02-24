@@ -1,7 +1,6 @@
 package com.ceiba.examen.controlador;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.DisplayName;
@@ -33,16 +32,15 @@ class ComandoControladorExamenTest {
     private MockMvc mocMvc;
 
     @Test
-    @DisplayName("Deberia crear un examen")
-    void deberiaCrearUnExamen() throws Exception{
+    @DisplayName("Deberia no crear un examen que ya está asignado a un cliente y certificación")
+    void deberiaNoCrearUnExamen() throws Exception{
         // arrange
         ComandoExamen examen = new ComandoExamenTestDataBuilder().build();
         // act - assert
         mocMvc.perform(post("/examenes")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(examen)))
-                .andExpect(status().isOk())
-                .andExpect(content().json("{'valor': 2}"));
+        		.andExpect(status().is5xxServerError());
     }
 
 }
