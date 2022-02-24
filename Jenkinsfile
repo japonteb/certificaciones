@@ -38,8 +38,6 @@ pipeline {
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>Compile & Unit Tests<------------"
-        cd certificaciones
-        echo "------------>Entro a certificaciones<------------"
         sh 'chmod +x gradlew'
         sh './gradlew clean'
         echo "------------>Ejecuto el clean<------------"
