@@ -8,6 +8,10 @@ import java.time.LocalDate;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import com.ceiba.BasePrueba;
+import com.ceiba.cliente.modelo.enumeracion.EnumeracionTipoCliente;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
+
 class UtilidadesFechaTest {
 
 	@Test
