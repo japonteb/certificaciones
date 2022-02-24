@@ -15,7 +15,6 @@ import com.ceiba.cliente.servicio.testdatabuilder.ClienteTestDataBuilder;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.examen.modelo.entidad.Examen;
 import com.ceiba.examen.servicio.testdatabuilder.ExamenTestDataBuilder;
-import com.ceiba.examen.servicio.testdatabuilder.ExamenTestDataBuilder;
 
 public class ExamenTest {
 

@@ -1,0 +1,1 @@
+select count(1) from examen where certificacion_id = :certificacionId

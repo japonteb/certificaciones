@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 import com.ceiba.BasePrueba;
 import com.ceiba.certificacion.modelo.entidad.Certificacion;
 import com.ceiba.certificacion.servicio.testdatabuilder.CertificacionTestDataBuilder;
-import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 

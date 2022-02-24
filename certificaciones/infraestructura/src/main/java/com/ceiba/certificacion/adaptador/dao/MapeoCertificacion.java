@@ -15,7 +15,7 @@ public class MapeoCertificacion implements RowMapper<DtoCertificacion>, MapperRe
 
 		Long id = resultSet.getLong("id");
 		String nombre = resultSet.getString("nombre");
-		String detalle = resultSet.getString("clave");
+		String detalle = resultSet.getString("detalle");
 		Integer duracion = resultSet.getInt("duracion");
 		Double precio = resultSet.getDouble("precio");
 

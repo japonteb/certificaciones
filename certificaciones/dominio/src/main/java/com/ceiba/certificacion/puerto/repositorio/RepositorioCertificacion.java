@@ -36,4 +36,10 @@ public interface RepositorioCertificacion {
      */
     boolean existePorId(Long id);
 
+    /**
+     * Permite validar si existe una certificacion asociada con un examen
+     * @return si existe o no
+     */    
+	boolean existeCertificacionEnExamenesPorId(Long id);
+
 }

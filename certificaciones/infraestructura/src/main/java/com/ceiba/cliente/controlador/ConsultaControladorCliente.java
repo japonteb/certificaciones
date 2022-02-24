@@ -36,8 +36,8 @@ public class ConsultaControladorCliente {
 
 	@GetMapping(value = "/{id}")
 	@ApiOperation("Obtener cliente por id")
-	public void obtenerClientePorId(@PathVariable Long id) {
-		manejadorListarClientePorId.ejecutar(id);
+	public DtoCliente obtenerClientePorId(@PathVariable Long id) {
+		return manejadorListarClientePorId.ejecutar(id);
 	}
 
 }

@@ -6,4 +6,7 @@ spring:
       password:
       hikari:
          poolName: pool
+   h2:
+      console:
+         enabled: true
 

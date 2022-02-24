@@ -33,9 +33,12 @@ class ConsultaControladorClienteTest {
 	void deberiaListarClientes() throws Exception {
 		// arrange
 		// act - assert
-		mocMvc.perform(get("/clientes").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
-				.andExpect(jsonPath("$", hasSize(1))).andExpect(jsonPath("$[0].nombre", is("test nombre")))
-				.andExpect(jsonPath("$[0].tipo_cliente)", is(1)));
+		mocMvc.perform(get("/clientes")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk())
+				.andExpect(jsonPath("$", hasSize(1)))
+				.andExpect(jsonPath("$[0].nombre", is("test nombre")))
+				.andExpect(jsonPath("$[0].id", is(1)));
 
 	}
 	
@@ -47,8 +50,8 @@ class ConsultaControladorClienteTest {
 		// act - assert
 		mocMvc.perform(get("/clientes/{id}",id)
 				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk())
-				.andExpect(jsonPath("$", hasSize(1))).andExpect(jsonPath("$[0].nombre", is("test nombre")))
-				.andExpect(jsonPath("$[0].tipo_cliente)", is(1)));
+				.andExpect(jsonPath("$.nombre", is("test nombre")))
+				.andExpect(jsonPath("$.id", is(1)));
 	}
 
 }
