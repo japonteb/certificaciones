@@ -40,6 +40,8 @@ pipeline {
         echo "------------>Compile & Unit Tests<------------"
         cd certificaciones
         sh 'chmod +x gradlew'
+        sh './gradlew clean'
+        echo "------------>Ejecuto el clean<------------"
         sh './gradlew --b ./build.gradle test'
       }
     }
