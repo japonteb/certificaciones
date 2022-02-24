@@ -45,8 +45,8 @@ pipeline {
 
     stage('Static Code Analysis') {
       steps{
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:[nombre.proyecto-nombre.apellido]', 
-        sonarName:'CeibaADN-NombreDelProyecto(nombre.apellido)', 
+        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:certificaciones-javier.aponte', 
+        sonarName:'CeibaADN-CeibaADN-Ceiba-Certificaciones(javier.aponte)', 
         sonarPathProperties:'./sonar-project.properties')
     }
   }  
