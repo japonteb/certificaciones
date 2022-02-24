@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.certificacion.servicio.ServicioEliminarCertificacionTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-02-24T18:20:58" hostname="JAVIER-APONTE" time="0.003">
-  <properties/>
-  <testcase name="Deberia eliminar la certificacion llamando al repositorio" classname="com.ceiba.certificacion.servicio.ServicioEliminarCertificacionTest" time="0.003"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
