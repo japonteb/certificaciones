@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-public class UtilidadesFecha {
+public final class UtilidadesFecha {
 
 	private UtilidadesFecha() {
 	    throw new IllegalStateException("Clase de utilidades de fecha");

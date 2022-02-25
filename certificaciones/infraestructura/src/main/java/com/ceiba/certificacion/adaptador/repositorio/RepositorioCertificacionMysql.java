@@ -13,21 +13,21 @@ public class RepositorioCertificacionMysql implements RepositorioCertificacion {
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;
 
     @SqlStatement(namespace="certificacion", value="crear")
-    private static String sqlCrear;
+    private static String sqlCrearCertificacion;
 
     @SqlStatement(namespace="certificacion", value="actualizar")
-    private static String sqlActualizar;
+    private static String sqlActualizarCertificacion;
 
     @SqlStatement(namespace="certificacion", value="eliminar")
-    private static String sqlEliminar;
+    private static String sqlEliminarCertificacion;
 
     @SqlStatement(namespace="certificacion", value="existe")
-    private static String sqlExiste;
+    private static String sqlExisteCertificacion;
 
     @SqlStatement(namespace="certificacion", value="existePorId")
-    private static String sqlExistePorId;
+    private static String sqlExisteCertificacionPorId;
     
-    @SqlStatement(namespace="certificacion", value="existeCertificacionEnExamenesPorId")
+    @SqlStatement(namespace="certificacion", value="existeEnExamenesPorId")
     private static String sqlExisteCertificacionEnExamenesPorId;
 
     public RepositorioCertificacionMysql(CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate) {
@@ -36,7 +36,7 @@ public class RepositorioCertificacionMysql implements RepositorioCertificacion {
 
     @Override
     public Long crear(Certificacion certificacion) {
-        return this.customNamedParameterJdbcTemplate.crear(certificacion, sqlCrear);
+        return this.customNamedParameterJdbcTemplate.crear(certificacion, sqlCrearCertificacion);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class RepositorioCertificacionMysql implements RepositorioCertificacion {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
 
-        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminar, paramSource);
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlEliminarCertificacion, paramSource);
     }
 
     @Override
@@ -53,12 +53,12 @@ public class RepositorioCertificacionMysql implements RepositorioCertificacion {
         paramSource.addValue("nombre", nombre);
         paramSource.addValue("detalle", detalle);
 
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExiste,paramSource, Boolean.class);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteCertificacion,paramSource, Boolean.class);
     }
 
     @Override
     public void actualizar(Certificacion certificacion) {
-        this.customNamedParameterJdbcTemplate.actualizar(certificacion, sqlActualizar);
+        this.customNamedParameterJdbcTemplate.actualizar(certificacion, sqlActualizarCertificacion);
     }
 
     @Override
@@ -66,7 +66,7 @@ public class RepositorioCertificacionMysql implements RepositorioCertificacion {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("id", id);
 
-        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExistePorId,paramSource, Boolean.class);
+        return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteCertificacionPorId,paramSource, Boolean.class);
     }
     
     @Override
