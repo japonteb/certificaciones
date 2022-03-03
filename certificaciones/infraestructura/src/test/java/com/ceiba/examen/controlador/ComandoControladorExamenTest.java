@@ -1,6 +1,7 @@
 package com.ceiba.examen.controlador;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import org.junit.jupiter.api.DisplayName;
@@ -15,6 +16,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.ceiba.ApplicationMock;
+import com.ceiba.certificacion.servicio.testdatabuilder.ComandoCertificacionTestDataBuilder;
 import com.ceiba.examen.comando.ComandoExamen;
 import com.ceiba.examen.servicio.testdatabuilder.ComandoExamenTestDataBuilder;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,7 +37,9 @@ class ComandoControladorExamenTest {
     @DisplayName("Deberia no crear un examen que ya está asignado a un cliente y certificación")
     void deberiaNoCrearUnExamen() throws Exception{
         // arrange
-        ComandoExamen examen = new ComandoExamenTestDataBuilder().build();
+        ComandoExamen examen = new ComandoExamenTestDataBuilder()
+        		.conComandoCertificacion(new ComandoCertificacionTestDataBuilder().conId(1L).build())
+        		.build();
         // act - assert
         mocMvc.perform(post("/examenes")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -52,7 +56,8 @@ class ComandoControladorExamenTest {
         mocMvc.perform(post("/examenes")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(examen)))
-        		.andExpect(status().is5xxServerError());
+        		.andExpect(status().isOk())
+        		.andExpect(content().json("{'valor': 2}"));;
     }
 
 }
