@@ -5,6 +5,8 @@ import com.ceiba.infraestructura.jdbc.sqlstatement.SqlStatement;
 import com.ceiba.examen.modelo.entidad.Examen;
 import com.ceiba.examen.puerto.repositorio.RepositorioExamen;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -24,7 +26,14 @@ public class RepositorioExamenMysql implements RepositorioExamen {
 
     @Override
     public Long crear(Examen examen) {
-        return this.customNamedParameterJdbcTemplate.crear(examen, sqlCrear);
+        MapSqlParameterSource paramSource = new MapSqlParameterSource();
+        paramSource.addValue("clienteId", examen.getCliente().getId());
+        paramSource.addValue("certificacionId", examen.getCertificacion().getId());
+        paramSource.addValue("fechaPresentacion", examen.getFechaPresentacion());
+        paramSource.addValue("precioTotal", examen.getPrecioTotal());
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().update(sqlCrear, paramSource,keyHolder,new String[] { "id" });
+        return keyHolder.getKey().longValue();
     }
 
     @Override

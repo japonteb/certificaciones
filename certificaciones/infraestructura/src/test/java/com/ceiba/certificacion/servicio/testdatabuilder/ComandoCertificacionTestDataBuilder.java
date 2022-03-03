@@ -20,6 +20,11 @@ public class ComandoCertificacionTestDataBuilder {
 
 	}
 
+	public ComandoCertificacionTestDataBuilder conId(Long id) {
+		this.id = id;
+		return this;
+	}
+	
 	public ComandoCertificacionTestDataBuilder conNombre(String nombre) {
 		this.nombre = nombre;
 		return this;

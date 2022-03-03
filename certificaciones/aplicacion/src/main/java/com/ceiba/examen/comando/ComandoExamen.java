@@ -2,6 +2,9 @@ package com.ceiba.examen.comando;
 
 import java.time.LocalDateTime;
 
+import com.ceiba.certificacion.comando.ComandoCertificacion;
+import com.ceiba.cliente.comando.ComandoCliente;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,8 +17,8 @@ import lombok.Setter;
 public class ComandoExamen{
 
     private Long id;
-    private Long clienteId;
-    private Long certificacionId;
+    private ComandoCliente comandoCliente;
+    private ComandoCertificacion comandoCertificacion;
     private LocalDateTime fechaPresentacion;
     private Double precioTotal;
 }

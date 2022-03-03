@@ -40,6 +40,7 @@ allprojects {
 	project.ext.springdevtools = ["org.springframework.boot:spring-boot-devtools:${springBootVersion}"]
 	project.ext.springbootundertow = ["org.springframework.boot:spring-boot-starter-undertow:${springBootVersion}"]
 	project.ext.springbootjasypt = ['com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.1']
+	project.ext.springbootwebservices = ["org.springframework.boot:spring-boot-starter-web-services:${springBootVersion}"]
 
 	// Se excluye JUnit 4
 	configurations {
@@ -71,6 +72,8 @@ allprojects {
 	project.ext.flywaytest = ["org.flywaydb.flyway-test-extensions:flyway-spring-test:5.2.1"]
 
 	project.ext.h2 = ["com.h2database:h2:1.4.200"]
+	
+
 }
 
 group = 'com.ceiba'
@@ -96,6 +99,7 @@ dependencies {
 	implementation project.ext.flyway
 
 	implementation project(':infraestructura')
+	implementation project.ext.springbootwebservices
 }
 
 bootJar {

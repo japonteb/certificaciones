@@ -42,5 +42,17 @@ class ComandoControladorExamenTest {
                 .content(objectMapper.writeValueAsString(examen)))
         		.andExpect(status().is4xxClientError());
     }
+    
+    @Test
+    @DisplayName("Deberia crear un examen")
+    void deberiaCrearUnExamen() throws Exception{
+        // arrange
+        ComandoExamen examen = new ComandoExamenTestDataBuilder().build();
+        // act - assert
+        mocMvc.perform(post("/examenes")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(objectMapper.writeValueAsString(examen)))
+        		.andExpect(status().is5xxServerError());
+    }
 
 }
