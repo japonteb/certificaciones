@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ceiba.ComandoRespuesta;
 import com.ceiba.examen.comando.ComandoExamen;
 import com.ceiba.examen.comando.manejador.ManejadorCrearExamen;
 
@@ -27,7 +26,7 @@ public class ComandoControladorExamen {
 
 	@PostMapping
 	@ApiOperation("Crear Examen")
-	public ComandoRespuesta<Long> crear(@RequestBody ComandoExamen comandoExamen) {
-		return manejadorCrearExamen.ejecutar(comandoExamen);
+	public void crear(@RequestBody ComandoExamen comandoExamen) {
+		manejadorCrearExamen.ejecutar(comandoExamen);
 	}
 }

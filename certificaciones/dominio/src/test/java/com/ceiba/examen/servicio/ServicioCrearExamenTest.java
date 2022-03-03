@@ -1,7 +1,5 @@
 package com.ceiba.examen.servicio;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -34,13 +32,11 @@ class ServicioCrearExamenTest {
 		Examen examen = new ExamenTestDataBuilder().build();
 		RepositorioExamen repositorioExamen = Mockito.mock(RepositorioExamen.class);
 		Mockito.when(repositorioExamen.existe(Mockito.anyLong(), Mockito.anyLong())).thenReturn(false);
-		Mockito.when(repositorioExamen.crear(examen)).thenReturn(10L);
 		ServicioCrearExamen servicioCrearExamen = new ServicioCrearExamen(repositorioExamen);
 		// act
-		Long idExamen = servicioCrearExamen.ejecutar(examen);
-		// - assert
-		assertEquals(10L, idExamen);
-		Mockito.verify(repositorioExamen, Mockito.times(1)).crear(examen);
+		servicioCrearExamen.ejecutar(examen);
+        //assert
+        Mockito.verify(repositorioExamen,Mockito.times(1)).crear(examen);
 	}
 
 }

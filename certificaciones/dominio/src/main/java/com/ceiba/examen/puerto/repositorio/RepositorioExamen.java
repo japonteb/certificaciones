@@ -8,7 +8,7 @@ public interface RepositorioExamen {
      * @param examen
      * @return el id generado
      */
-    Long crear(Examen examen);
+    void crear(Examen examen);
 
     /**
      * Permite validar si existe un examen para un cliente y una certificaci[on

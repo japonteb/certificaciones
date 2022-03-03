@@ -14,10 +14,10 @@ public class ServicioCrearExamen {
 		this.repositorioExamen = repositorioExamen;
 	}
 
-	public Long ejecutar(Examen examen) {
+	public void ejecutar(Examen examen) {
 		validarExistenciaPrevia(examen);
 		
-		return this.repositorioExamen.crear(examen);
+		this.repositorioExamen.crear(examen);
 	}
 
 	private void validarExistenciaPrevia(Examen examen) {
