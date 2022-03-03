@@ -18,6 +18,7 @@ public class ComandoExamen{
 
     private Long id;
     private ComandoCliente comandoCliente;
+    
     private ComandoCertificacion comandoCertificacion;
     private LocalDateTime fechaPresentacion;
     private Double precioTotal;
